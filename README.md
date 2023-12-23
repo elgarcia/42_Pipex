@@ -16,8 +16,8 @@ To make sure this is successfully done, we will use some functions that we are a
 
 **📝Functions📝**
 There we have a summary of the most valuable functions I implemented:
-- `void	init_pipex(int *pipe_fd, pid_t *pid);` : This function where we open the pipes with the function `int pipe()` mentioned before. After this action we use the function `int fork()` to create the child process. 
-- `void	treat_child(int *pipes, char **argv, char ***exec_args, char **envp);` : This function will manage the child process, where we will use the first `execve()` call.
-- `int		prepare_command(char **argv, int arg_c,	char ***exec_args, char *envp);` : In this one we get the command given by arguments in the call of the executable, and basically parse it to get the necessary arguments to use the function `execve()`.
-- `int		check_command(char *command, char ***exec_args);` : This function make sure the command that they give us exists and we have enough permissions to execute it. If not it will `exit()` with the correct value (In this case 127).
-- `int		assign_path(char ***exec_args, char *command, char **envp);` : This function is called in `prepare_command()` to assign the correct path to the command from the `envp[]`.
+- `void init_pipex(int *pipe_fd, pid_t *pid);` : This function where we open the pipes with the function `int pipe()` mentioned before. After this action we use the function `int fork()` to create the child process. 
+- `void treat_child(int *pipes, char **argv, char ***exec_args, char **envp);` : This function will manage the child process, where we will use the first `execve()` call.
+- `int prepare_command(char **argv, int arg_c,	char ***exec_args, char *envp);` : In this one we get the command given by arguments in the call of the executable, and basically parse it to get the necessary arguments to use the function `execve()`.
+- `int check_command(char *command, char ***exec_args);` : This function make sure the command that they give us exists and we have enough permissions to execute it. If not it will `exit()` with the correct value (In this case 127).
+- `int assign_path(char ***exec_args, char *command, char **envp);` : This function is called in `prepare_command()` to assign the correct path to the command from the `envp[]`.
