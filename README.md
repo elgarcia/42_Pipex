@@ -3,7 +3,7 @@ A project about pipes and child/parent process
 
 ***
 
-**✅Objective✅**
+**✅Objective✅**\n
 In this project we aim to execute two different commands (or scripts) to a file and redirect the output into another file (could exist or not).
 
 To make sure this is successfully done, we will use some functions that we are allowed to use, there we have some important functions we will use:
