@@ -17,6 +17,8 @@ To make sure this is successfully done, we will use some functions that we are a
     - `char *const _Nullable envp[]` : This is an array of string where we will have the enviroment paths. Can be NULL.
 
 **📝Functions📝**
+
+
 There we have a summary of the most valuable functions I implemented:
 - `void init_pipex(int *pipe_fd, pid_t *pid);` : This function where we open the pipes with the function `int pipe()` mentioned before. After this action we use the function `int fork()` to create the child process. 
 - `void treat_child(int *pipes, char **argv, char ***exec_args, char **envp);` : This function will manage the child process, where we will use the first `execve()` call.
